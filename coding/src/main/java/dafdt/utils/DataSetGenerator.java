@@ -1,16 +1,17 @@
 package dafdt.utils;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.concurrent.ThreadLocalRandom;
 
 
 import dafdt.models.DataAttribute;
+import dafdt.models.Rule;
 import dafdt.wekaex.AttributeEx;
 import dafdt.wekaex.ClassifierEx;
 import dafdt.wekaex.NominalAttributeInfoEx;
 import weka.core.Attribute;
 import weka.core.AttributeStats;
-import weka.core.NominalAttributeInfo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class DataSetGenerator {
@@ -18,13 +19,12 @@ public class DataSetGenerator {
 	private ArrayList<Rule> rules;
 	private double totalInstances;
 	private int numInstances;
-	private ArrayList<AttributeEx> metadatalist;
-	public ArrayList<AttributeEx> getMetadatalist() {
+	private ArrayList<Attribute> metadatalist;
+	public ArrayList<Attribute> getMetadatalist() {
 		return metadatalist;
 	}
-		
 
-	public void setMetadatalist(ArrayList<AttributeEx> metadatalist) {
+	public void setMetadatalist(ArrayList<Attribute> metadatalist) {
 		this.metadatalist = metadatalist;
 	}
 
@@ -32,7 +32,6 @@ public class DataSetGenerator {
 	private ClassifierEx classifier;
 	
 	public DataSetGenerator(ClassifierEx classifier, int numInstances) {
-
 		this.rules = classifier.getRules();
 		for (Rule rule : rules) {
 			this.totalInstances += rule.total;
@@ -40,12 +39,12 @@ public class DataSetGenerator {
 		
 		this.stats = classifier.getStats();
 		this.numInstances = numInstances;
-		metadatalist = new ArrayList<AttributeEx>();
+		metadatalist = new ArrayList<Attribute>();
 
 		for(Attribute att : Collections.list(classifier.getTrainingData().enumerateAttributes())) {
-			metadatalist.add((AttributeEx) att);
-			}
-		metadatalist.add((AttributeEx)classifier.getTrainingData().classAttribute());
+			metadatalist.add(att);
+		}
+		metadatalist.add(classifier.getTrainingData().classAttribute());
 		
 		this.classifier = classifier;
 		//this.classifier
@@ -161,7 +160,7 @@ public class DataSetGenerator {
 				for(DataAttribute attribute : attributes) {
 					//check if attribute is numeric
 					
-					for(AttributeEx att : metadatalist) {
+					for(Attribute att : metadatalist) {
 						if(att.name().equals(attribute.name()) && (!att.name().equals("class"))) {
 							if(att.isNumeric()) {
 								instance[attributes.indexOf(attribute)] = String.valueOf(attribute.getRandomValue());
@@ -180,7 +179,7 @@ public class DataSetGenerator {
 					}
 
 				}
-				if(classifier.isNominal()) {
+				if(rule.isCategorical()) {
 					instance[attributes.size() - 1] = rule.classvalue; 
 				}				
 				else {

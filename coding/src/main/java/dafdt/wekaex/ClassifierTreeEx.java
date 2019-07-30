@@ -1,11 +1,10 @@
 package dafdt.wekaex;
 
 import dafdt.models.DataAttribute;
-import dafdt.utils.Condition;
-import dafdt.utils.NodeSide;
-import dafdt.utils.Rule;
+import dafdt.models.Condition;
+import dafdt.models.NodeSide;
+import dafdt.models.Rule;
 import org.apache.commons.lang3.math.NumberUtils;
-import weka.classifiers.trees.j48.C45Split;
 import weka.classifiers.trees.j48.ClassifierTree;
 import weka.classifiers.trees.j48.ModelSelection;
 import weka.core.AttributeStats;

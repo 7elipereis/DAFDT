@@ -1,6 +1,6 @@
 package dafdt.wekaex;
 
-import dafdt.utils.Rule;
+import dafdt.models.Rule;
 import weka.classifiers.Classifier;
 import weka.core.AttributeStats;
 import weka.core.Instances;

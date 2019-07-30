@@ -1,6 +1,5 @@
-package dafdt.utils;
+package dafdt.models;
 
-import dafdt.models.DataAttribute;
 import weka.core.Utils;
 
 public class Condition {

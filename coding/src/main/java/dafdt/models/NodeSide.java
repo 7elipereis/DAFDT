@@ -1,4 +1,4 @@
-package dafdt.utils;
+package dafdt.models;
 
 public enum NodeSide {
 	Right,

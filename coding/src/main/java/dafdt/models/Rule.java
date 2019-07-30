@@ -1,10 +1,9 @@
-package dafdt.utils;
+package dafdt.models;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import dafdt.models.DataAttribute;
 import dafdt.wekaex.AdaBoostM1Ex;
 import dafdt.wekaex.AttributeEx;
 import dafdt.wekaex.ClassifierEx;
@@ -15,7 +14,6 @@ import weka.classifiers.trees.DecisionStump;
 import weka.classifiers.trees.J48;
 import weka.core.Attribute;
 import weka.core.AttributeStats;
-import weka.core.Instances;
 
 public class Rule {
 
@@ -115,7 +113,7 @@ public class Rule {
 	}
 
 
-	public ArrayList<DataAttribute> discoverAttributesDataBoundaries(ArrayList<AttributeEx> metadatalist, ArrayList<AttributeStats> stats){
+	public ArrayList<DataAttribute> discoverAttributesDataBoundaries(ArrayList<Attribute> metadatalist, ArrayList<AttributeStats> stats){
 		ArrayList<Condition> conditions = filterConditions();
 		ArrayList<Condition> boundaries = new ArrayList<Condition>();
 
@@ -250,7 +248,7 @@ public class Rule {
 
 		ArrayList<Classifier> classifiersensembled = new ArrayList<Classifier>();
 		ArrayList<Rule> rules = new ArrayList<Rule>();
-		ArrayList<AttributeEx> metadatalist = new ArrayList<AttributeEx>();
+		ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
 
 		if(classifiers.get(0).getClass().getName().equals(AdaBoostM1.class.getName())) {
 			for(Attribute att:Collections.list((((ClassifierEx)((AdaBoostM1Ex)classifiers.get(0)).getClassifiers().get(0)).getTrainingData().enumerateAttributes()))) {metadatalist.add((AttributeEx)att);}

@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import dafdt.wekaex.AttributeEx;
 import dafdt.wekaex.NominalAttributeInfoEx;
+import weka.core.Attribute;
+import weka.core.NominalAttributeInfo;
+import weka.core.NominalAttributeInfoExposer;
 
 public class DataSetWriter {
 
@@ -52,7 +55,7 @@ public class DataSetWriter {
 		}
 		return filepathresult;
 	}
-	public String arffWriter(String filename, ArrayList<String[]> data, ArrayList<AttributeEx> metadatalist) {
+	public String arffWriter(String filename, ArrayList<String[]> data, ArrayList<Attribute> metadatalist) {
 
 		double totalInstances = 0;
 		String filepathresult = "";
@@ -62,12 +65,12 @@ public class DataSetWriter {
 			FileWriter writer = new FileWriter(new File(filename + "_generated" + ".arff"));			
 			writer.write("@relation last_generated" + line);
 			
-			for(AttributeEx att : metadatalist) {
+			for(Attribute att : metadatalist) {
 				if(att.isNumeric()) {
 					writer.write("@attribute " + att.name() + " numeric" + line);
 				}
 				else {
-					ArrayList<Object> values =  ((NominalAttributeInfoEx)att.getNominalAttributeInfo()).getValues();
+					ArrayList<Object> values = NominalAttributeInfoExposer.get_m_Values(att.getNominalAttributeInfo());
 					StringBuffer nominalValues = new StringBuffer();
 					for(Object v :  values){
 						nominalValues.append(String.valueOf(v));
@@ -161,12 +164,12 @@ public class DataSetWriter {
 		
 		for(String[] instance: data) {
 			for (int i = 0; i < instance.length; i++) {
-				if(i<(instance.length)) {
+				if(i<(instance.length)-1) {
 					writer.write(instance[i]);
 					writer.write(",");
 				}
 				else {
-					writer.write(instance[i]);
+					writer.write(Long.toString(Math.round(Double.parseDouble(instance[i]))));
 				}
 				
 			}
