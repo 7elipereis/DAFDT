@@ -9,7 +9,7 @@ import weka.core.Utils;
 
 import java.util.ArrayList;
 
-public class J48Ex extends J48 {
+public class J48Ex extends J48 implements ClassifierEx {
 
     private double m_weight = 0;
     private ArrayList<Rule> rules;
@@ -26,6 +26,11 @@ public class J48Ex extends J48 {
 
     public int NodeCount() {
         return m_root.numNodes();
+    }
+
+    @Override
+    public void setWeight(double weight) {
+
     }
 
     public double getWeight() {
@@ -119,5 +124,20 @@ public class J48Ex extends J48 {
             total+=r.total;
         }
         return total;
+    }
+
+    @Override
+    public double[][] getRulesMaxAndMin() {
+        return new double[0][];
+    }
+
+    @Override
+    public double[] getRulesLeafsLabels() {
+        return new double[0];
+    }
+
+    @Override
+    public boolean isNominal() {
+        return false;
     }
 }

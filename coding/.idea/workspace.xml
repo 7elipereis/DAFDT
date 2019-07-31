@@ -2,40 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c8db36-0bc5-4b75-acd7-1621b961f4b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/examples/TestDAFDT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HNodeCo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HNodeEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/NBNodeAdaptiveEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/SplitEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/SplitNodeEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/UnivariateNumericBinarySplitEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/ht/HNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/ht/Split.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/ht/SplitNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/ht/UnivariateNumericBinarySplit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/core/Attribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/core/NominalAttributeInfoExposer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/D1.arff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/examples/PlotOverlappedAreas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/OverlappedAreas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/meta/AdaBoostM1Ex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/J48Exposer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding/META-INF/coding.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/Condition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/NodeSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/NodeSide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/AttributeEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/AttributeEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/ClassifierEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/ClassifierEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/ClassifierTreeEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/ClassifierTreeEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HoeffdingTreeEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HoeffdingTreeEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/DecisionStumpEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/DecisionStumpEx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/J48Ex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/J48Ex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/coding.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,9 +55,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/matlabfunctions/lib/javabuilder.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -116,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestDAFDT">
+  <component name="RunManager" selected="Application.PlotOverlappedAreas">
     <configuration name="AttributeEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dafdt.wekaex.AttributeEx" />
       <module name="coding" />
@@ -143,6 +118,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlotGrayAreas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dafdt.examples.PlotGrayAreas" />
+      <module name="coding" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dafdt.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlotOverlappedAreas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dafdt.examples.PlotOverlappedAreas" />
+      <module name="coding" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dafdt.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDAFDT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dafdt.examples.TestDAFDT" />
       <module name="coding" />
@@ -158,6 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PlotOverlappedAreas" />
+        <item itemvalue="Application.PlotGrayAreas" />
         <item itemvalue="Application.TestDAFDT" />
         <item itemvalue="Application.AttributeEx" />
         <item itemvalue="Application.Main" />
@@ -186,7 +189,7 @@
       <workItem from="1563831030370" duration="602000" />
       <workItem from="1564496925625" duration="690000" />
       <workItem from="1564498218715" duration="224000" />
-      <workItem from="1564499547583" duration="15846000" />
+      <workItem from="1564499547583" duration="27673000" />
     </task>
     <servers />
   </component>
@@ -249,78 +252,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>coding</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
