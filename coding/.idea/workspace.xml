@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c8db36-0bc5-4b75-acd7-1621b961f4b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/examples/PlotOverlappedAreas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/OverlappedAreas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/meta/AdaBoostM1Ex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/J48Exposer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/DecisionStumpEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/DecisionStumpEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/J48Ex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/J48Ex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +181,7 @@
       <workItem from="1563831030370" duration="602000" />
       <workItem from="1564496925625" duration="690000" />
       <workItem from="1564498218715" duration="224000" />
-      <workItem from="1564499547583" duration="27673000" />
+      <workItem from="1564499547583" duration="28422000" />
     </task>
     <servers />
   </component>
