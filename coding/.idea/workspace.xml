@@ -2,16 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c8db36-0bc5-4b75-acd7-1621b961f4b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_eclipsesource_j2v8_j2v8_linux_x86_64_4_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_eclipsesource_j2v8_j2v8_macosx_x86_64_4_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_eclipsesource_j2v8_j2v8_win32_x86_4_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_eclipsesource_j2v8_j2v8_win32_x86_64_4_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_classification_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_clustering_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_api_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_data_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_dbids_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_dbids_int_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_distance_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_math_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_parallel_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_core_util_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_data_generator_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_database_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_geo_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_lsh_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_mtree_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_preprocessed_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_rtree_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_index_various_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_input_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_itemsets_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_logging_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_outlier_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_persistent_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_precomputed_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_lmu_ifi_dbs_elki_elki_timeseries_0_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__guru_nidi_com_kitfox_svgSalamander_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__guru_nidi_graphviz_java_0_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_arnx_nashorn_promise_0_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jafama_jafama_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_optics_dbScan_1_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_prefuseTree_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_exec_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_xmlgraphics_commons_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_launcher_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_prefuse_prefuse_beta_20071021.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_npm_viz_js_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matlabfunctions/DataMergingMatlabUtils/for_redistribution_files_only/for_redistribution_files_only.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/Experiment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/GraphVizHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/Matlab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/ClassifierExposer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/trees/DecisionStumpExposer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_core_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/coding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/examples/PlotOverlappedAreas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/examples/PlotOverlappedAreas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/examples/TestDAFDT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/examples/TestDAFDT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/models/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/Condition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/models/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/models/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HoeffdingTreeEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dafdt/wekaex/HoeffdingTreeEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/weka/classifiers/meta/AdaBoostM1Ex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/weka/classifiers/meta/AdaBoostM1Ex.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -41,19 +132,23 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/matlabfunctions/lib/javabuilder.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenRunHelper" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -71,19 +166,7 @@
       <recent name="C:\repos\l3s\DAFDT\coding\src\main\java\dafdt\wekaex\utils" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.PlotOverlappedAreas">
+  <component name="RunManager" selected="Application.TestDAFDT">
     <configuration name="AttributeEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dafdt.wekaex.AttributeEx" />
       <module name="coding" />
@@ -151,13 +234,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestDAFDT" />
         <item itemvalue="Application.PlotOverlappedAreas" />
         <item itemvalue="Application.PlotGrayAreas" />
-        <item itemvalue="Application.TestDAFDT" />
         <item itemvalue="Application.AttributeEx" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -182,6 +277,41 @@
       <workItem from="1564496925625" duration="690000" />
       <workItem from="1564498218715" duration="224000" />
       <workItem from="1564499547583" duration="28422000" />
+      <workItem from="1565372661637" duration="523000" />
+      <workItem from="1565373223821" duration="8178000" />
+      <workItem from="1566762837938" duration="510000" />
+      <workItem from="1567609837702" duration="655000" />
+      <workItem from="1567610803920" duration="605000" />
+      <workItem from="1567611483248" duration="629000" />
+      <workItem from="1568027135279" duration="47000" />
+      <workItem from="1568027395400" duration="6817000" />
+      <workItem from="1568108773626" duration="3602000" />
+      <workItem from="1568796107965" duration="1849000" />
+      <workItem from="1568798957871" duration="5357000" />
+      <workItem from="1568884724701" duration="1233000" />
+      <workItem from="1568885975883" duration="7699000" />
+      <workItem from="1569420594242" duration="107000" />
+      <workItem from="1569423821736" duration="7037000" />
+      <workItem from="1569503079272" duration="79000" />
+      <workItem from="1570698677703" duration="450000" />
+      <workItem from="1570699241514" duration="2321000" />
+      <workItem from="1571064377907" duration="2845000" />
+      <workItem from="1571067270982" duration="18000" />
+      <workItem from="1571996512738" duration="17000" />
+      <workItem from="1571996542188" duration="14000" />
+      <workItem from="1571996569513" duration="602000" />
+      <workItem from="1573632402283" duration="23000" />
+      <workItem from="1573632487326" duration="790000" />
+      <workItem from="1573633301042" duration="11961000" />
+      <workItem from="1574245008189" duration="51000" />
+      <workItem from="1574245074889" duration="11801000" />
+      <workItem from="1574931608040" duration="5674000" />
+      <workItem from="1575371863829" duration="48000" />
+      <workItem from="1575372476545" duration="112000" />
+      <workItem from="1575372601503" duration="5821000" />
+      <workItem from="1575390017750" duration="5404000" />
+      <workItem from="1575447283144" duration="154000" />
+      <workItem from="1575447781808" duration="3043000" />
     </task>
     <servers />
   </component>
@@ -193,56 +323,107 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="450" y="160" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575372509638">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="450" y="160" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575372509638" />
+    <state width="462" height="438" key="DebuggerActiveHint" timestamp="1575395504269">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="462" height="438" key="DebuggerActiveHint/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575378659042" />
+    <state width="462" height="438" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1575395504269" />
+    <state x="475" y="174" key="FileChooserDialogImpl" timestamp="1575375391346">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="475" y="174" key="FileChooserDialogImpl/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575375391346" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1575450845842">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.0.bottom/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1575450845842" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1575450845842">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.0.center/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1575450845842" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1575450845842">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.0.left/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1575450845842" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1575450845842">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.0.right/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1575450845842" />
+    <state width="1493" height="146" key="GridCell.Tab.1.bottom" timestamp="1575450845836">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.1.bottom/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1575450845836" />
+    <state width="1493" height="146" key="GridCell.Tab.1.center" timestamp="1575450845836">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.1.center/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1575450845836" />
+    <state width="1493" height="146" key="GridCell.Tab.1.left" timestamp="1575450845836">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.1.left/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321839" />
+    <state width="1493" height="146" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1575450845836" />
+    <state width="1493" height="146" key="GridCell.Tab.1.right" timestamp="1575450845836">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.1.right/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1575450845836" />
+    <state width="1493" height="146" key="GridCell.Tab.2.bottom" timestamp="1575450866129">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.2.bottom/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1575450866129" />
+    <state width="1493" height="146" key="GridCell.Tab.2.center" timestamp="1575450866128">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.2.center/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1575450866128" />
+    <state width="1493" height="146" key="GridCell.Tab.2.left" timestamp="1575450866128">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.2.left/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1575450866128" />
+    <state width="1493" height="146" key="GridCell.Tab.2.right" timestamp="1575450866129">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="146" key="GridCell.Tab.2.right/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575379321840" />
+    <state width="1493" height="146" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1575450866129" />
+    <state x="250" y="7" key="SettingsEditor" timestamp="1575375404183">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="250" y="7" key="SettingsEditor/0.0.1536.864/3840.0.1920.1080@0.0.1536.864" timestamp="1575375404183" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>165</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>169</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>182</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>185</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dafdt/utils/DataSetGenerator.java</url>
-          <line>187</line>
-          <option name="timeStamp" value="71" />
+          <url>file://$PROJECT_DIR$/src/main/java/weka/classifiers/meta/AdaBoostM1Ex.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/coding$TestDAFDT.ic" NAME="TestDAFDT Coverage Results" MODIFIED="1575391061781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dafdt.examples.*</FILTER>
+    </SUITE>
   </component>
 </project>

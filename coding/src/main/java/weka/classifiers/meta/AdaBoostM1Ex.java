@@ -8,16 +8,20 @@ import dafdt.wekaex.ClassifierEx;
 import dafdt.wekaex.DecisionStumpEx;
 import dafdt.wekaex.J48Ex;
 import weka.classifiers.Classifier;
+import weka.classifiers.ClassifierExposer;
 import weka.classifiers.trees.DecisionStump;
+import weka.classifiers.trees.DecisionStumpExposer;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.J48Exposer;
 import weka.core.Attribute;
+import weka.core.AttributeStats;
+import weka.core.Instances;
 import weka.core.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AdaBoostM1Ex extends AdaBoostM1 {
+public class AdaBoostM1Ex extends AdaBoostM1 implements ClassifierEx {
 
     //@Override
     public double[] getRulesLeafsLabels() {
@@ -52,6 +56,11 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
 
         }
         return rulesLeafsLabels;
+    }
+
+    @Override
+    public boolean isNominal() {
+        return false;
     }
 
     public OverlappedAreas findOverlapped(){
@@ -134,6 +143,37 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
         }
         return filteredrules;
     }
+
+    @Override
+    public void setWeight(double weight) {
+
+    }
+
+    @Override
+    public double getWeight() {
+        return 0;
+    }
+
+    @Override
+    public Instances getTrainingData() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Rule> getRules() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<AttributeStats> getStats() {
+        return null;
+    }
+
+    @Override
+    public double TotalInstances() {
+        return 0;
+    }
+
     //@Override
     public double[][] getRulesMaxAndMin() {
         // TODO Auto-generated method stub
@@ -141,20 +181,18 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
         ArrayList<Classifier> classifiers = new ArrayList<Classifier>();
         ArrayList<Rule> rules = new ArrayList<Rule>();
         ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
-        for(Attribute att:Collections.list( ((ClassifierEx)m_Classifiers[0]).getTrainingData().enumerateAttributes())) {metadatalist.add(att);}
+        for(Attribute att:Collections.list(ClassifierExposer.getDecisionStumpTrainingData(((Classifier)m_Classifiers[0])).enumerateAttributes())) {metadatalist.add(att);}
 
         ArrayList<double[]> maxnmins = new ArrayList<double[]>();
 
         for (Classifier classifier : getFilteredClassifiers()) {
             classifiers.add(classifier);
-            for (Rule r : ((ClassifierEx)classifier).getRules()) {
+            for (Rule r : DecisionStumpExposer.getRules((DecisionStump)classifier)) {
 
                 ArrayList<DataAttribute> attributes = r.discoverAttributesDataBoundaries(metadatalist, ((ClassifierEx)classifier).getStats());
                 rules.add(r);
                 maxnmins.add(new double[] {attributes.get(0).getMin(), attributes.get(0).getMax(),attributes.get(1).getMin(),attributes.get(1).getMax()});
-
             }
-
         }
         double[][] rulesMaxAndMin = new double[rules.size()][4];
 
@@ -165,9 +203,9 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
         return rulesMaxAndMin;
     }
 
-    public ArrayList<ClassifierEx> getFilteredClassifiers(){
+    public ArrayList<Classifier> getFilteredClassifiers(){
 
-        ArrayList<ClassifierEx> result = new ArrayList<ClassifierEx>();
+        ArrayList<Classifier> result = new ArrayList<Classifier>();
 
         if (m_NumIterationsPerformed == 1) {
             ClassifierEx classifier = ((ClassifierEx)m_Classifiers[0]);
@@ -175,6 +213,7 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
             result.add(classifier);
         }
         else {
+            int cIndex = 0;
             for (Classifier classifier : m_Classifiers) {
                 if(classifier.getClass().getName().equals(J48.class.getName())) {
                     J48Ex c = (J48Ex)classifier;
@@ -185,10 +224,12 @@ public class AdaBoostM1Ex extends AdaBoostM1 {
                     }
                 }
                 if(classifier.getClass().getName().equals(DecisionStump.class.getName())) {
-                    if(((DecisionStumpEx)classifier).getWeight()!=0) {
-                        result.add((ClassifierEx) classifier);
+
+                    if(Utils.roundDouble(m_Betas[cIndex], 2)!=0) {
+                        result.add((Classifier) classifier);
                     }
                 }
+                cIndex++;
             }
         }
         return result;

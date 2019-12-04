@@ -2,8 +2,6 @@
   <library name="Maven: com.github.fommil.netlib:core:1.1">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/com/github/fommil/netlib/core/1.1/core-1.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/matlabfunctions/DataMergingMatlabUtils/for_redistribution_files_only/DataMergingMatlabUtils.jar!/" />
-      <root url="jar://$PROJECT_DIR$/matlabfunctions/lib/javabuilder.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/com/github/fommil/netlib/core/1.1/core-1.1-javadoc.jar!/" />

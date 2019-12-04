@@ -1,7 +1,7 @@
 package dafdt.examples;
 
-import DataMergingMatlabUtils.Plotter;
-import com.mathworks.toolbox.javabuilder.MWException;
+//import DataMergingMatlabUtils.Plotter;
+//import com.mathworks.toolbox.javabuilder.MWException;
 import dafdt.models.OverlappedAreas;
 import dafdt.utils.DataLoader;
 
@@ -18,9 +18,9 @@ public class PlotOverlappedAreas {
 
         try {
             adaBoostM1Ex.buildClassifier(dataset);
-            Plotter matlabPlotter = new Plotter();
+            //Plotter matlabPlotter = new Plotter();
             OverlappedAreas overlappedAreas = adaBoostM1Ex.findOverlapped();
-            matlabPlotter.plotOverlapped(overlappedAreas.data, overlappedAreas.maxmins, overlappedAreas.weights, overlappedAreas.labels, "FileOverlappedColorGradient", "Overlapped Areas Plot");
+            //matlabPlotter.plotOverlapped(overlappedAreas.data, overlappedAreas.maxmins, overlappedAreas.weights, overlappedAreas.labels, "FileOverlappedColorGradient", "Overlapped Areas Plot");
 
         } catch (Exception e) {
             e.printStackTrace();

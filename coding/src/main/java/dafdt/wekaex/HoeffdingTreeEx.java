@@ -3,21 +3,37 @@ package dafdt.wekaex;
 import dafdt.models.Condition;
 import dafdt.models.DataAttribute;
 import dafdt.models.NodeSide;
+import dafdt.models.Rule;
 import dafdt.utils.DataSetGenerator;
 import dafdt.utils.DataSetWriter;
-import dafdt.models.Rule;
+import dafdt.utils.Experiment;
+import dafdt.utils.Matlab;
+import de.lmu.ifi.dbs.elki.algorithm.clustering.DBSCAN;
+import de.lmu.ifi.dbs.elki.algorithm.clustering.kmeans.KMeansLloyd;
+import de.lmu.ifi.dbs.elki.algorithm.clustering.kmeans.initialization.RandomUniformGeneratedInitialMeans;
+import de.lmu.ifi.dbs.elki.data.Cluster;
+import de.lmu.ifi.dbs.elki.data.Clustering;
+import de.lmu.ifi.dbs.elki.data.NumberVector;
+import de.lmu.ifi.dbs.elki.data.model.KMeansModel;
+import de.lmu.ifi.dbs.elki.data.model.Model;
+import de.lmu.ifi.dbs.elki.data.type.TypeUtil;
+import de.lmu.ifi.dbs.elki.database.Database;
+import de.lmu.ifi.dbs.elki.database.StaticArrayDatabase;
+import de.lmu.ifi.dbs.elki.database.ids.DBIDIter;
+import de.lmu.ifi.dbs.elki.database.ids.DBIDRange;
+import de.lmu.ifi.dbs.elki.database.relation.Relation;
+import de.lmu.ifi.dbs.elki.datasource.ArrayAdapterDatabaseConnection;
+import de.lmu.ifi.dbs.elki.datasource.DatabaseConnection;
+import de.lmu.ifi.dbs.elki.distance.distancefunction.minkowski.SquaredEuclideanDistanceFunction;
+import de.lmu.ifi.dbs.elki.utilities.random.RandomFactory;
 import weka.classifiers.trees.HoeffdingTree;
 import weka.classifiers.trees.ht.*;
-import weka.core.Attribute;
-import weka.core.AttributeStats;
-import weka.core.Instances;
+import weka.core.*;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
 
@@ -27,6 +43,7 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
     public ArrayList<AttributeStats> stats;
     private double totalInstances = 0;
     private boolean isNominal;
+    public Instances originaldata;
 
     @Override
     public void setWeight(double weight) {
@@ -46,12 +63,14 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
     @Override
     public ArrayList<Rule> getRules() {
 
-        findLeafs(m_root);
-        buildRulesFromLeafs();
-        String tree = this.toString();
-        StringBuffer buff = new StringBuffer();
-        for(Rule r : rules) {
-            buff.append(r.toString() + "\n");
+        if(rules==null){
+            findLeafs(m_root);
+            buildRulesFromLeafs();
+            String tree = this.toString();
+            StringBuffer buff = new StringBuffer();
+            for(Rule r : rules) {
+                buff.append(r.toString() + "\n");
+            }
         }
         return rules;
     }
@@ -167,12 +186,50 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
 
     @Override
     public double[][] getRulesMaxAndMin() {
-        return new double[0][];
+        ArrayList<Rule> rules = getRules();
+
+        ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
+        for(Attribute att:Collections.list(this.getTrainingData().enumerateAttributes())) {metadatalist.add(att);}
+
+        double[][] rulesMaxAndMin = new double[rules.size()][4];
+        //char[][] rulesLeafsLabels = new char[rules.size()][];
+
+        for (Rule rule : rules) {
+
+            //double ruleInfluence = Math.round(rule.getRuleInfluence(totalInstances)*numInstances);
+            ArrayList<DataAttribute> attributes = rule.discoverAttributesDataBoundaries(metadatalist, stats);
+
+            rulesMaxAndMin[rules.indexOf(rule)] = new double[]{attributes.get(0).getMin(),attributes.get(0).getMax(),attributes.get(1).getMin(),attributes.get(1).getMax()};
+            String label = rule.data + "(" + rule.total + "/" + rule.incorrect +")";
+            //rulesLeafsLabels[rules.indexOf(rule)] = label.toCharArray();
+        }
+
+
+        return rulesMaxAndMin;
     }
 
     @Override
     public double[] getRulesLeafsLabels() {
-        return new double[0];
+        ArrayList<Rule> rules = getRules();
+
+        ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
+        for(Attribute att:Collections.list(this.getTrainingData().enumerateAttributes())) {metadatalist.add(att);}
+
+        //double[][] rulesMaxAndMin = new double[rules.size()][4];
+        //char[][] rulesLeafsLabels = new char[rules.size()][];
+
+
+
+        double[] result = new double[rules.size()];
+
+        for(Rule r : rules) {
+            double w = (Double)(r.total/this.TotalInstances());
+            r.weight = Utils.roundDouble(w, 2);
+            result[rules.indexOf(r)] = r.weight;
+        }
+
+
+        return result;
     }
 
     @Override
@@ -180,10 +237,222 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
         return false;
     }
 
-    public Instances generateInstances(int size) {
+    public void fitOriginalToLeaf(){
+
+        ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
+        for(Attribute att : Collections.list(this.getTrainingData().enumerateAttributes())) {
+            metadatalist.add(att);
+        }
+
+        this.rules = getRules();
+
+        for(Rule rule: rules){
+
+            rule.originaldata = new Instances(originaldata, 0,0);
+
+            ArrayList<DataAttribute> dataAttributes = rule.discoverAttributesDataBoundaries(metadatalist, stats);
+
+            for(Instance instance: originaldata){
+
+                boolean instanceDoesFitLeaf = true;
+
+                for(Attribute attribute: metadatalist){
+                    //find instance value of the attribute
+                    double instanceValue = instance.value(attribute);
+
+                    //find dataattribute of the attribute
+                    DataAttribute dataAttribute = null;
+                    for(DataAttribute da: dataAttributes){
+                        if(da.name().equals(attribute.name())){
+                            dataAttribute = da;
+                        }
+                    }
+
+                    if(dataAttribute.getMin() > instanceValue){
+                        instanceDoesFitLeaf = false;
+                    }
+                    if(dataAttribute.getMax() < instanceValue){
+                        instanceDoesFitLeaf = false;
+                    }
+
+                }
+
+                //test class value
+                double instanceClassValue = instance.classValue();
+
+                if(Double.parseDouble(rule.classvalue) == 1){
+                    String c = rule.classvalue;
+                }
+                if(rule.data == 1){
+                    String c = rule.classvalue;
+                }
+                if(rule.isCategorical()) {
+                    if(instanceClassValue != Double.parseDouble(rule.classvalue)){
+                        instanceDoesFitLeaf = false;
+                    }
+                    //instance[attributes.size() - 1] = rule.classvalue;
+                }
+                else {
+
+                    //instance[attributes.size() - 1] = String.valueOf(rule.data);
+                }
+                if(instanceDoesFitLeaf)rule.originaldata.add(instance);
+            }
+        }
+
+    }
+    public void writeRuleOriginalData(){
+
+        int countRule = 0;
+        for(Rule rule : rules){
+            if(rule.originaldata!=null){
+                DataSetWriter writer = new DataSetWriter();
+                String atts[] = {"A","B"};
+                writer.arffWriter("Experiment/Rules/rule_" + countRule, writer.readDataSetToArray(rule.originaldata), atts);
+                countRule++;
+            }
+
+        }
+    }
+
+    public void clearEmptyRules(){
+        rules.removeIf(value -> value.originaldata.size() == 0);
+
+    }
+
+    public void clusterRules(){
+
+        for(Rule rule: rules){
+
+            if(rule.originaldata.size()<=0)continue;
+
+            DatabaseConnection dbc = new ArrayAdapterDatabaseConnection(Experiment.dataSetToArray(rule.originaldata));
+            Database db = new StaticArrayDatabase(dbc, null);
+            db.initialize();
+            SquaredEuclideanDistanceFunction dist = SquaredEuclideanDistanceFunction.STATIC;
+            //RandomNormalGeneratedInitialMeans initnormal = new RandomNormalGeneratedInitialMeans(RandomFactory.DEFAULT);
+            RandomUniformGeneratedInitialMeans inituniform = new RandomUniformGeneratedInitialMeans(RandomFactory.DEFAULT);
+
+
+            DBSCAN<NumberVector> dbscan = new DBSCAN<>(dist, 100, 10);
+            KMeansLloyd<NumberVector> km = new KMeansLloyd<>(dist, 3, 0, inituniform);
+
+            Clustering<Model> cdbscan = dbscan.run(db);
+            Clustering<KMeansModel> ckmeans = km.run(db);
+
+            Relation<NumberVector> reldbscan = db.getRelation(TypeUtil.NUMBER_VECTOR_FIELD);
+            Relation<NumberVector> relkmeans = db.getRelation(TypeUtil.NUMBER_VECTOR_FIELD);
+
+            DBIDRange idsdbscan = (DBIDRange) reldbscan.getDBIDs();
+            DBIDRange idskmeans = (DBIDRange) relkmeans.getDBIDs();
+
+            //iteration dbscan
+            int i = 0;
+            for(Cluster<Model> clu : cdbscan.getAllClusters()) {
+
+                //save cluster info to RUle
+                rule.dbscanclusters = clu;
+                // K-means will name all clusters "Cluster" in lack of noise support:
+                System.out.println("#" + i + ": " + clu.getNameAutomatic());
+                System.out.println("Size: " + clu.size());
+                //System.out.println("Center: " + clu.getModel().getPrototype().toString());
+                // Iterate over objects:
+                System.out.print("Objects: ");
+                for(DBIDIter it = clu.getIDs().iter(); it.valid(); it.advance()) {
+                    // To get the vector use:
+                    NumberVector v = reldbscan.get(it);
+                    // Offset within our DBID range: "line number"
+                    final int offset = idsdbscan.getOffset(it);
+                    System.out.print(" " + offset);
+                    // Do NOT rely on using "internalGetIndex()" directly!
+                }
+                System.out.println();
+                ++i;
+            }
+
+            //iteration kmeans
+            int ikmeans = 0;
+            //save cluster info to RUle
+            rule.kmeansclusters = ckmeans;
+            for(Cluster<KMeansModel> clu : ckmeans.getAllClusters()) {
+
+                // K-means will name all clusters "Cluster" in lack of noise support:
+                System.out.println("#" + ikmeans + ": " + clu.getNameAutomatic());
+                System.out.println("Size: " + clu.size());
+                System.out.println("Center: " + clu.getModel().getPrototype().toString());
+                // Iterate over objects:
+                System.out.print("Objects: ");
+                for(DBIDIter it = clu.getIDs().iter(); it.valid(); it.advance()) {
+                    // To get the vector use:
+                    NumberVector v = relkmeans.get(it);
+
+                    // Offset within our DBID range: "line number"
+                    final int offset = idskmeans.getOffset(it);
+                    System.out.print(" " + offset);
+                    // Do NOT rely on using "internalGetIndex()" directly!
+                }
+                System.out.println();
+                ++ikmeans;
+            }
+
+
+//            KMeansLloyd<NumberVector> km = new KMeansLloyd<>(dist, 3, 0, init);
+//            Clustering<KMeansModel> c = km.run(db);
+//            // Relation containing the number vectors:
+//            Relation<NumberVector> rel = db.getRelation(TypeUtil.NUMBER_VECTOR_FIELD);
+//            // We know that the ids must be a continuous range:
+//            DBIDRange ids = (DBIDRange) rel.getDBIDs();
+//
+//            int i = 0;
+//            for(Cluster<KMeansModel> clu : c.getAllClusters()) {
+//                // K-means will name all clusters "Cluster" in lack of noise support:
+//                System.out.println("#" + i + ": " + clu.getNameAutomatic());
+//                System.out.println("Size: " + clu.size());
+//                System.out.println("Center: " + clu.getModel().getPrototype().toString());
+//                // Iterate over objects:
+//                System.out.print("Objects: ");
+//                for(DBIDIter it = clu.getIDs().iter(); it.valid(); it.advance()) {
+//                    // To get the vector use:
+//                    NumberVector v = rel.get(it);
+//
+//                    // Offset within our DBID range: "line number"
+//                    final int offset = ids.getOffset(it);
+//                    System.out.print(" " + offset);
+//                    // Do NOT rely on using "internalGetIndex()" directly!
+//                }
+//                System.out.println();
+//                ++i;
+//            }
+
+
+//            //rule.clusterInfoDBSCAN = new DBSCAN();
+//            try {
+//
+//                Instances dataClusterer = null;
+//                weka.filters.unsupervised.attribute.Remove filter = new weka.filters.unsupervised.attribute.Remove();
+//                filter.setAttributeIndices("" + (rule.originaldata.classIndex() + 1));
+//                try {
+//                    filter.setInputFormat(rule.originaldata);
+//                    dataClusterer = Filter.useFilter(rule.originaldata, filter);
+//                } catch (Exception e1) {
+//                    e1.printStackTrace();
+//                    return;
+//                }
+//
+//                //rule.clusterInfoDBSCAN.buildClusterer(dataClusterer);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
+        }
+
+    }
+
+
+    public Instances generateInstances(int size, String datageneratedfilename, boolean usesKmeans) {
         Instances result = null;
         DataSetGenerator dsg = new DataSetGenerator(this, size);
-        ArrayList<String[]> generated_data = dsg.GenerateNominal();
+        ArrayList<String[]> generated_data = dsg.GenerateNominal(usesKmeans);
 
         DataSetWriter dsw = new DataSetWriter();
 
@@ -192,7 +461,13 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
             if(att.name()!= null)
                 attnames[att.index()]=att.name();
         }
-        String arfffile = dsw.arffWriter("", generated_data, dsg.getMetadatalist());
+        String arfffile = dsw.arffWriter(datageneratedfilename, generated_data, dsg.getMetadatalist());
+        //plot
+        try {
+            Matlab.plotDSWithRuleBoundaries(Experiment.readDataSetToArray(arfffile), this.getRulesMaxAndMin(), this.getRulesLeafsLabels(),"Experiment/GeneratedDataTreesLeafsBoundaries","Generated Data Against Tree Boundaries");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         try {
             result = new Instances(new FileReader(arfffile));
@@ -231,5 +506,40 @@ public class HoeffdingTreeEx extends HoeffdingTree implements ClassifierEx {
         // can classifier handle the data?
         getCapabilities().testWithFail(data);
 
+    }
+
+    public void plotRulesCentroidsAndBoundaries() {
+
+        ArrayList<double[]> centroids = new ArrayList<>();
+
+        for(Rule rule : rules){
+
+            centroids.addAll(rule.centroidsList);
+        }
+        double[][] dataset = new double[centroids.size()][];
+        ArrayList<String[]> datasetToPrint =  new ArrayList<>();
+
+        int index = 0;
+        for(double[] centroid : centroids){
+            dataset[index] = centroid;
+            String[] instanceToText = new String[centroid.length];
+            int indexj = 0;
+            for(double v : centroid){
+                instanceToText[indexj] = String.valueOf(v);
+                indexj++;
+            }
+            datasetToPrint.add(instanceToText);
+            index++;
+        }
+        DataSetWriter dsw = new DataSetWriter();
+        ArrayList<Attribute> metadatalist = new ArrayList<Attribute>();
+
+        for(Attribute att : Collections.list(this.getTrainingData().enumerateAttributes())) {
+            metadatalist.add(att);
+        }
+        metadatalist.add(this.getTrainingData().classAttribute());
+        String arfffile = dsw.arffWriter("Experiment/centroidsDataSet", datasetToPrint, metadatalist);
+
+        Matlab.plotDSWithRuleBoundaries(dataset, this.getRulesMaxAndMin(), this.getRulesLeafsLabels(),"Experiment/centroidsWithBoundaries","Tree Boundaries with Clusters Centroids");
     }
 }

@@ -1,0 +1,211 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="412132537" file="C:\repos\l3s\DAFDT\coding\matlab\DataMergingMatlabUtils.prj" location="C:\repos\l3s\DAFDT\coding\matlab" name="DataMergingMatlabUtils" preferred-package-location="C:\PhDProjectFelipe\Matlab\DataMergingMatlabUtils\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.library" target-name="Library Compiler">
+    <param.appname>DataMergingMatlabUtils</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\DataMergingMatlabUtils\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>C:\repos\l3s\DAFDT\coding\libs</param.intermediate>
+    <param.files.only>C:\repos\l3s\DAFDT\coding\libs</param.files.only>
+    <param.output>C:\repos\l3s\DAFDT\coding\libs</param.output>
+    <param.logdir>${PROJECT_ROOT}\DataMergingMatlabUtils</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.java.package</param.target.type>
+    <param.support.packages />
+    <param.namespace />
+    <param.classorg />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.user.only.registration>false</param.user.only.registration>
+    <param.assembly.type>false</param.assembly.type>
+    <param.encryption.key.file />
+    <param.net.enable.remoting>false</param.net.enable.remoting>
+    <param.net.tsa.enable>false</param.net.tsa.enable>
+    <param.net.tsa.assembly />
+    <param.net.tsa.interface />
+    <param.net.tsa.namespace />
+    <param.net.tsa.superclass>Plotter</param.net.tsa.superclass>
+    <param.net.tsa.metadata />
+    <param.net.tsa.metadata.assembly>C:\repos\l3s\DAFDT\coding\matlab</param.net.tsa.metadata.assembly>
+    <param.net.saved.interface />
+    <param.cpp.api>option.cpp.all</param.cpp.api>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.target.install.notes />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.support.packages />
+      <param.namespace />
+      <param.classorg />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.user.only.registration />
+      <param.assembly.type />
+      <param.encryption.key.file />
+      <param.net.enable.remoting />
+      <param.net.tsa.enable />
+      <param.net.tsa.assembly />
+      <param.net.tsa.interface />
+      <param.net.tsa.namespace />
+      <param.net.tsa.superclass />
+      <param.net.tsa.metadata />
+      <param.net.tsa.metadata.assembly />
+      <param.net.saved.interface />
+      <param.cpp.api />
+    </unset>
+    <fileset.exports>
+      <file>${PROJECT_ROOT}\BaseLineBatchAbruptDrift.m</file>
+      <file>${PROJECT_ROOT}\BaseLineBatchDrift.m</file>
+      <file>${PROJECT_ROOT}\filterDS.m</file>
+      <file>${PROJECT_ROOT}\genDS2.m</file>
+      <file>${PROJECT_ROOT}\genDS4.m</file>
+      <file>${PROJECT_ROOT}\genrand.m</file>
+      <file>${PROJECT_ROOT}\genRot.m</file>
+      <file>${PROJECT_ROOT}\genRot2D.m</file>
+      <file>${PROJECT_ROOT}\genRot2DDrift.m</file>
+      <file>${PROJECT_ROOT}\normDS.m</file>
+      <file>${PROJECT_ROOT}\pca2.m</file>
+      <file>${PROJECT_ROOT}\pca2originalgenerated.m</file>
+      <file>${PROJECT_ROOT}\plotBoxApproachStreamSizeAll.m</file>
+      <file>${PROJECT_ROOT}\plotDS.m</file>
+      <file>${PROJECT_ROOT}\plotOverlapped.m</file>
+      <file>${PROJECT_ROOT}\plotOverlappedGradientBoxes.m</file>
+      <file>${PROJECT_ROOT}\plotOverlappedGradientBoxesGrayAreas.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvals.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp2.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp2Split.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp3.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp3Split.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp3SplitDTSize.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsComp3SplitTag.m</file>
+      <file>${PROJECT_ROOT}\plotStrEvalsCompBar.m</file>
+      <file>${PROJECT_ROOT}\plotWithRuleBoundaries.m</file>
+      <file>${PROJECT_ROOT}\printPctCorrectStream.m</file>
+      <file>${PROJECT_ROOT}\rot.m</file>
+    </fileset.exports>
+    <fileset.classes>
+      <entity.package name="">
+        <entity.class name="Plotter">
+          <file>${PROJECT_ROOT}\genRot2D.m</file>
+          <file>${PROJECT_ROOT}\genRot2DDrift.m</file>
+          <file>${PROJECT_ROOT}\pca2.m</file>
+          <file>${PROJECT_ROOT}\pca2originalgenerated.m</file>
+          <file>${PROJECT_ROOT}\plotBoxApproachStreamSizeAll.m</file>
+          <file>${PROJECT_ROOT}\plotDS.m</file>
+          <file>${PROJECT_ROOT}\plotOverlapped.m</file>
+          <file>${PROJECT_ROOT}\plotOverlappedGradientBoxes.m</file>
+          <file>${PROJECT_ROOT}\plotOverlappedGradientBoxesGrayAreas.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvals.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp2.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp2Split.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp3.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp3Split.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp3SplitDTSize.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsComp3SplitTag.m</file>
+          <file>${PROJECT_ROOT}\plotStrEvalsCompBar.m</file>
+          <file>${PROJECT_ROOT}\plotWithRuleBoundaries.m</file>
+          <file>${PROJECT_ROOT}\printPctCorrectStream.m</file>
+        </entity.class>
+        <entity.class name="DatasetRotator">
+          <file>${PROJECT_ROOT}\BaseLineBatchAbruptDrift.m</file>
+          <file>${PROJECT_ROOT}\BaseLineBatchDrift.m</file>
+          <file>${PROJECT_ROOT}\genRot.m</file>
+          <file>${PROJECT_ROOT}\genRot2D.m</file>
+          <file>${PROJECT_ROOT}\genRot2DDrift.m</file>
+          <file>${PROJECT_ROOT}\rot.m</file>
+        </entity.class>
+        <entity.class name="DatasetGenerator">
+          <file>${PROJECT_ROOT}\genDS2.m</file>
+        </entity.class>
+      </entity.package>
+    </fileset.classes>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\filterDS.m</file>
+      <file>${PROJECT_ROOT}\genDS2.m</file>
+      <file>${PROJECT_ROOT}\genDS4.m</file>
+      <file>${PROJECT_ROOT}\generateDS.m</file>
+      <file>${PROJECT_ROOT}\genrand.m</file>
+      <file>${PROJECT_ROOT}\genRot.m</file>
+      <file>${PROJECT_ROOT}\normDS.m</file>
+      <file>${PROJECT_ROOT}\plotBoxApproachStreamSize.m</file>
+      <file>${PROJECT_ROOT}\plotDS.m</file>
+      <file>${PROJECT_ROOT}\rot.m</file>
+      <file>${PROJECT_ROOT}\rotateDS.m</file>
+    </fileset.resources>
+    <fileset.depfun />
+    <fileset.package />
+    <fileset.examples />
+    <fileset.documentation />
+    <build-deliverables>
+      <file location="C:\repos\l3s\DAFDT\coding\libs" name="doc" optional="false">C:\repos\l3s\DAFDT\coding\libs\doc</file>
+      <file location="C:\repos\l3s\DAFDT\coding\libs" name="DataMergingMatlabUtils.jar" optional="false">C:\repos\l3s\DAFDT\coding\libs\DataMergingMatlabUtils.jar</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2019a</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

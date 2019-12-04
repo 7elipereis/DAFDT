@@ -3,13 +3,16 @@ package dafdt.utils;
 
 import dafdt.models.DataAttribute;
 import dafdt.models.Rule;
-import dafdt.wekaex.AttributeEx;
 import dafdt.wekaex.ClassifierEx;
 import dafdt.wekaex.NominalAttributeInfoEx;
+import de.lmu.ifi.dbs.elki.data.Cluster;
+import de.lmu.ifi.dbs.elki.data.model.KMeansModel;
+import org.apache.commons.math3.ml.distance.EuclideanDistance;
 import weka.core.Attribute;
 import weka.core.AttributeStats;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -120,17 +123,21 @@ public class DataSetGenerator {
 		}
 		return data;
 	}
+
+
 	
-	public ArrayList<String[]> GenerateNominal() {
+	public ArrayList<String[]> GenerateNominal(boolean usesKmeans) {
 		
 		ArrayList<String[]> generatedData = new ArrayList<String[]>();
+		ArrayList<String[]> generatedClusteredData = new ArrayList<String[]>();
 		//double[][] rulesMaxAndMin = new double[rules.size()][4];
 		//char[][] rulesLeafsLabels = new char[rules.size()][];
 		
 		StringBuffer buff = new StringBuffer();
 		buff.append("filtered rules \n");
+		int countRulesGeneration = 0;
 		for (Rule rule : rules) {
-			
+			rule.centroidsList = new ArrayList<double[]>();
 			double ruleInfluence = Math.round(rule.getRuleInfluence(totalInstances)*numInstances);
 			ArrayList<DataAttribute> attributes = rule.discoverAttributesDataBoundaries(metadatalist, stats);
 			buff.append("********** Rule #" + String.valueOf(rules.indexOf(rule)+1) + " Class value: "+ rule.classvalue + " total influence "+ ruleInfluence + "*********\n");
@@ -154,7 +161,7 @@ public class DataSetGenerator {
 					
 				}
 			}
-			for (int i = 0; i <= ruleInfluence; i++) {				
+			for (int i = 0; i <= ruleInfluence; i++) {
 				//String[] instance = new String[attributes.size()+1];	
 				String[] instance = new String[attributes.size()];	
 				for(DataAttribute attribute : attributes) {
@@ -185,7 +192,41 @@ public class DataSetGenerator {
 				else {
 					instance[attributes.size() - 1] = String.valueOf(rule.data);
 				}
-				generatedData.add(instance);				
+
+				//test if generated instances is close to the cluster center
+				if(usesKmeans){
+					int ikmeans = 0;
+					boolean isInstanceCloseToAnyCentroid = false;
+					if(rule.kmeansclusters==null)continue;
+					for(Cluster<KMeansModel> clu : rule.kmeansclusters.getAllClusters()) {
+
+
+						double[] centroid = clu.getModel().getMean();
+
+						double[] centroidFeaturesOnly = {centroid[0], centroid[1]};
+
+
+						double[] instanceData = Arrays.stream(instance)
+								.mapToDouble(Double::parseDouble)
+								.toArray();
+						double[] instanceDataFeaturesOnly = {instanceData[0], instanceData[1]};
+
+
+						EuclideanDistance d = new EuclideanDistance();
+						double distance = d.compute(centroidFeaturesOnly,instanceDataFeaturesOnly);
+						if(distance <= 5)isInstanceCloseToAnyCentroid = true;
+
+					}
+					if(isInstanceCloseToAnyCentroid)
+						generatedData.add(instance);
+				}
+				else {
+					generatedData.add(instance);
+				}
+			}
+			for(Cluster<KMeansModel> clu : rule.kmeansclusters.getAllClusters()) {
+				double[] centroid = clu.getModel().getMean();
+				rule.centroidsList.add(centroid);
 			}
 			
 			buff.append("********* end rule ***********  \n\n\n\n");

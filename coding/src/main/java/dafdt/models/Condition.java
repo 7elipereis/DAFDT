@@ -3,9 +3,7 @@ package dafdt.models;
 import weka.core.Utils;
 
 public class Condition {
-	
-	
-	
+
 	DataAttribute attribute;
 	//public String attribute;
 	public NodeSide nodeSide;

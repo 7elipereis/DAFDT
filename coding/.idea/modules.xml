@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/coding.iml" filepath="$PROJECT_DIR$/coding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/matlabfunctions/DataMergingMatlabUtils/for_redistribution_files_only/for_redistribution_files_only.iml" filepath="$PROJECT_DIR$/matlabfunctions/DataMergingMatlabUtils/for_redistribution_files_only/for_redistribution_files_only.iml" />
     </modules>
   </component>
 </project>

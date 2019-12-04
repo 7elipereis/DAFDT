@@ -1,19 +1,25 @@
 package dafdt.models;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-
 import dafdt.wekaex.AdaBoostM1Ex;
 import dafdt.wekaex.AttributeEx;
 import dafdt.wekaex.ClassifierEx;
 import dafdt.wekaex.J48Ex;
+import de.lmu.ifi.dbs.elki.data.Cluster;
+import de.lmu.ifi.dbs.elki.data.Clustering;
+import de.lmu.ifi.dbs.elki.data.model.KMeansModel;
+import de.lmu.ifi.dbs.elki.data.model.Model;
 import weka.classifiers.Classifier;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.trees.DecisionStump;
 import weka.classifiers.trees.J48;
+import weka.clusterers.DBSCAN;
 import weka.core.Attribute;
 import weka.core.AttributeStats;
+import weka.core.Instances;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Rule {
 
@@ -25,7 +31,11 @@ public class Rule {
 	public boolean isCategorical;
 	public double[][] generatedData;
 	public double weight;
-
+	public Instances originaldata;
+	public DBSCAN clusterInfoDBSCAN;
+	public Cluster<Model> dbscanclusters;
+	public Clustering<KMeansModel> kmeansclusters;
+	public ArrayList<double[]> centroidsList;
 
 
 	public boolean isCategorical() {

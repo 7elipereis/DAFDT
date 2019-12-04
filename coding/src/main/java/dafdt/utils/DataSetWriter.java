@@ -1,14 +1,14 @@
 package dafdt.utils;
 
+import weka.core.Attribute;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.NominalAttributeInfoExposer;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import dafdt.wekaex.AttributeEx;
-import dafdt.wekaex.NominalAttributeInfoEx;
-import weka.core.Attribute;
-import weka.core.NominalAttributeInfo;
-import weka.core.NominalAttributeInfoExposer;
 
 public class DataSetWriter {
 
@@ -44,6 +44,7 @@ public class DataSetWriter {
 			writer.write("@data"+ line);
 
 			writeData(writer, data);
+			writer.close();
 
 			arffFile = new File(filename + ".arff");
 			filepathresult = arffFile.getPath();
@@ -177,5 +178,18 @@ public class DataSetWriter {
 		}
 
 		writer.close();
+	}
+
+	public static double[][] readDataSetToArray(Instances instances) {
+		Instances dataset = null;
+		double[][] data = null;
+		dataset = instances;
+		data = new double[dataset.size()][dataset.numAttributes()];
+
+		for (Instance instance : dataset) {
+			data[dataset.indexOf(instance)] = instance.toDoubleArray();
+		}
+
+		return data;
 	}
 }
